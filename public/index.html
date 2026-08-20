@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Score de Creativos</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">TU MARCA<span>.</span></div>
+    <div class="brand" style="color:#8c8c8c; font-weight:400;">Score de Creativos</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- FORM -->
+  <div id="view-form" class="hero">
+    <h1>¿Cuánta plata estás<br/><em>dejando en la mesa</em>?</h1>
+    <p class="sub">Cargá tu web y tu Instagram. Buscamos tus anuncios activos en la biblioteca de Meta y te mostramos, sin filtro, dónde se te está yendo el presupuesto.</p>
+
+    <form id="analyze-form" class="form-card">
+      <div class="field">
+        <label for="website">Sitio web</label>
+        <input type="text" id="website" name="website" placeholder="tumarca.com" required />
+      </div>
+      <div class="field">
+        <label for="instagram">Instagram</label>
+        <input type="text" id="instagram" name="instagram" placeholder="@tumarca" required />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="vos@tumarca.com" required />
+      </div>
+      <div class="field">
+        <label for="whatsapp">WhatsApp (opcional)</label>
+        <input type="text" id="whatsapp" name="whatsapp" placeholder="+54 9 11 ...." />
+      </div>
+      <div class="field">
+        <label for="monthlyBudget">Presupuesto mensual aprox. en Meta Ads (opcional)</label>
+        <input type="text" id="monthlyBudget" name="monthlyBudget" placeholder="$ 500.000" />
+        <div class="hint">Con este dato podemos estimar impacto en pesos. Sin él, mostramos el impacto en términos relativos.</div>
+      </div>
+      <button type="submit" class="btn-primary" id="submit-btn">Generar mi Score</button>
+      <div id="error-box" class="error-box" style="display:none;"></div>
+    </form>
+  </div>
+
+  <!-- LOADING -->
+  <div id="view-loading" class="loading" style="display:none;">
+    <div class="spinner"></div>
+    <div class="status" id="loading-status">Buscando tu página en Meta...</div>
+  </div>
+
+  <!-- CANDIDATE SELECTION -->
+  <div id="view-candidates" class="hero" style="display:none; text-align:left;">
+    <h1 style="font-size:32px;">Confirmá cuál sos vos</h1>
+    <p class="sub" style="margin:0 0 32px;">Encontramos más de una página con anuncios activos para esta búsqueda. Elegí la tuya.</p>
+    <div id="candidates-list"></div>
+    <div class="restart-link" id="candidates-back">← Volver</div>
+  </div>
+
+  <!-- NO MATCH -->
+  <div id="view-nomatch" class="hero" style="display:none;">
+    <h1 style="font-size:32px;">No encontramos tu página</h1>
+    <p class="sub" id="nomatch-text">No hay anuncios activos en la Meta Ad Library para esa búsqueda.</p>
+    <form id="manual-form" class="form-card">
+      <div class="field">
+        <label for="manualPageName">Nombre exacto de tu página de Facebook</label>
+        <input type="text" id="manualPageName" placeholder="Como figura en Facebook" />
+      </div>
+      <button type="submit" class="btn-primary">Buscar de nuevo</button>
+    </form>
+    <div class="restart-link" id="nomatch-demo">Ver un reporte de ejemplo con este formato →</div>
+  </div>
+
+  <!-- REPORT -->
+  <div id="view-report" class="report"></div>
+
+</div>
+
+<footer>Score de Creativos — diagnóstico automatizado sobre datos públicos de Meta Ad Library.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
