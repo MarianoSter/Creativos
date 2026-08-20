@@ -1,0 +1,17 @@
+{
+  "name": "creative-score-app",
+  "version": "1.0.0",
+  "description": "Lead magnet: analiza web + Instagram, busca los anuncios activos en Meta Ad Library y genera un reporte de Score de Creativos.",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0"
+  }
+}

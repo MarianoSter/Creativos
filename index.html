@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Score de Creativos</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">TU MARCA<span>.</span></div>
+    <div class="brand" style="color:#8c8c8c; font-weight:400;">Score de Creativos</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- FORM -->
+  <div id="view-form" class="hero">
+    <h1>¿Cuánta plata estás<br/><em>dejando en la mesa</em>?</h1>
+    <p class="sub">Cargá tu web y tu Instagram. Buscamos tus anuncios activos en la biblioteca de Meta y te mostramos, sin filtro, dónde se te está yendo el presupuesto.</p>
+
+    <form id="analyze-form" class="form-card">
+      <div class="field">
+        <label for="website">Sitio web</label>
+        <input type="text" id="website" name="website" placeholder="tumarca.com" required />
+      </div>
+      <div class="field">
+        <label for="instagram">Instagram</label>
+        <input type="text" id="instagram" name="instagram" placeholder="@tumarca" required />
+      </div>
+      <div class="field">
+        <label for="monthlyBudget">Presupuesto mensual aprox. en Meta Ads (opcional)</label>
+        <input type="text" id="monthlyBudget" name="monthlyBudget" placeholder="$ 500.000" />
+        <div class="hint">Con este dato podemos estimar impacto en pesos. Sin él, mostramos el impacto en términos relativos.</div>
+      </div>
+      <button type="submit" class="btn-primary" id="submit-btn">Generar mi Score</button>
+      <div id="error-box" class="error-box" style="display:none;"></div>
+    </form>
+  </div>
+
+  <!-- LOADING -->
+  <div id="view-loading" class="loading" style="display:none;">
+    <div class="spinner"></div>
+    <div class="status" id="loading-status">Buscando tus anuncios activos en Meta...</div>
+  </div>
+
+  <!-- REPORT -->
+  <div id="view-report" class="report"></div>
+
+</div>
+
+<footer>Score de Creativos — diagnóstico automatizado sobre datos públicos de Meta Ad Library.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
